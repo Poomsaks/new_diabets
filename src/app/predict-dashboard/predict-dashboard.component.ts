@@ -9,14 +9,14 @@ import { Main_serviceService } from '../main_service/main_service.service';
 export class PredictDashboardComponent implements OnInit {
   text_predict: string = ''; // Initialize text_predict
 
-  Pregnancies: number = 0;
-  Glucose: number = 0;
-  BloodPressure: number = 0;
+  Pregnancies: number = 1;
+  Glucose: number = 1;
+  BloodPressure: number = 1;
   SkinThickness: number = 0;
   Insulin: number = 0;
   BMIz: number = 0;
-  DiabetesPedigreeFunction: number = 0;
-  Age: number = 0;
+  DiabetesPedigreeFunction: number = 1;
+  Age: number = 1;
 
   constructor(
     private _serviceService: Main_serviceService,
@@ -25,7 +25,6 @@ export class PredictDashboardComponent implements OnInit {
 
   ngOnInit() {
     this.function_slider();
-    this.resetValues()
     // this._serviceService.authenticate().subscribe((response: any) => {
     //   // console.log(response.result.response);
     // });
@@ -82,16 +81,7 @@ export class PredictDashboardComponent implements OnInit {
 
 
   }
-  resetValues() {
-    this.Pregnancies = 0;
-    this.Glucose = 0;
-    this.BloodPressure = 0;
-    this.SkinThickness = 0;
-    this.Insulin = 0;
-    this.BMIz = 0;
-    this.DiabetesPedigreeFunction = 0;
-    this.Age = 0;
-  }
+
   submitForm() {
     console.log("asdw");
     this.text_predict = "asdw";
